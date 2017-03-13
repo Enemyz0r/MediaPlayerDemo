@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <center>
+      <MediaView fx:id="mv" fitHeight="100.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <SplitPane dividerPositions="0.48484848484848486" orientation="VERTICAL" prefHeight="64.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3.0" prefWidth="598.0">
+               <children>
+                  <GridPane layoutX="39.0" layoutY="11.0" prefHeight="27.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="Infinity" progress="0.0" GridPane.columnIndex="1">
+                           <effect>
+                              <Bloom threshold="0.0">
+                                 <input>
+                                    <ColorAdjust />
+                                 </input>
+                              </Bloom>
+                           </effect>
+                        </ProgressBar>
+                        <Slider fx:id="timeSlider" prefHeight="14.0" prefWidth="Infinity" translateX="-4.0" GridPane.columnIndex="1">
+                           <effect>
+                              <Bloom threshold="0.0">
+                                 <input>
+                                    <ColorAdjust />
+                                 </input>
+                              </Bloom>
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Slider>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="598.0" translateX="2.0">
+               <children>
+                  <Button layoutX="185.0" layoutY="3.0" mnemonicParsing="false" onAction="#slow" text="-1.5" translateX="2.0" GridPane.columnIndex="8" />
+                  <Button fx:id="reverse" layoutX="133.0" layoutY="3.0" mnemonicParsing="false" onAction="#reverse" text="⏪" translateX="2.0" GridPane.columnIndex="5" />
+                  <Button layoutX="101.0" layoutY="3.0" mnemonicParsing="false" onAction="#start" prefHeight="25.0" prefWidth="31.0" text=" ◼" translateX="2.0" GridPane.columnIndex="2" />
+                  <Button layoutX="40.0" layoutY="3.0" mnemonicParsing="false" onAction="#play" prefHeight="25.0" prefWidth="31.0" text="▶" translateX="2.0" GridPane.columnIndex="1" />
+                  <Button layoutX="72.0" layoutY="3.0" mnemonicParsing="false" onAction="#pause" text="⏸" translateX="2.0" GridPane.columnIndex="3" />
+                  <Button layoutX="256.0" layoutY="3.0" mnemonicParsing="false" onAction="#fast" text="+1.5" translateX="2.0" GridPane.columnIndex="6" />
+                  <Button layoutX="223.0" layoutY="3.0" mnemonicParsing="false" onAction="#normal" text="1.0" translateX="2.0" GridPane.columnIndex="7" />
+                  <Slider fx:id="volumeSlider" layoutX="386.0" layoutY="8.0" translateX="2.0" GridPane.columnIndex="11">
+                     <effect>
+                        <Bloom threshold="0.0">
+                           <input>
+                              <ColorAdjust />
+                           </input>
+                        </Bloom>
+                     </effect>
+                  </Slider>
+                  <Button fx:id="fastForward" layoutX="159.0" layoutY="3.0" mnemonicParsing="false" onAction="#fastForward" text="⏩" translateX="2.0" GridPane.columnIndex="4" />
+                  <Button layoutX="297.0" layoutY="3.0" mnemonicParsing="false" onAction="#reload" text="⟳" translateX="2.0" GridPane.columnIndex="9" />
+                  <Label fx:id="label2" layoutX="340.0" layoutY="6.0" text="Label" translateX="2.0" />
+                  <Label fx:id="label" layoutY="6.0" prefHeight="18.0" prefWidth="39.0" text="Label" translateX="2.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </bottom>
+</BorderPane>
